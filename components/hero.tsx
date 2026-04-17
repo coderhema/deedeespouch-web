@@ -1,10 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, MapPin } from 'lucide-react';
+import { ArrowRight, ExternalLink, Sparkles, MapPin } from 'lucide-react';
 import { brand, featuredImage, highlights } from '@/lib/content';
 
 const spring = { type: 'spring', stiffness: 120, damping: 18, mass: 0.9 };
+const etsyUrl = 'https://deedeebespokestore.etsy.com/listing/4438824872';
 
 export function Hero() {
   return (
@@ -43,7 +44,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...spring, delay: 0.22 }}
-            className="mt-8 flex flex-col gap-3 sm:flex-row"
+            className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
           >
             <a
               href="#menu"
@@ -57,7 +58,19 @@ export function Hero() {
             >
               View the strategy
             </a>
+            <a
+              href={etsyUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-6 py-3.5 text-sm font-medium text-violet-900 transition hover:border-violet-300 hover:bg-violet-100"
+            >
+              Shop on Etsy <ExternalLink className="h-4 w-4" />
+            </a>
           </motion.div>
+
+          <p className="mt-4 text-sm text-zinc-500">
+            Now available on Etsy for easy ordering and delivery.
+          </p>
 
           <div className="mt-10 grid gap-3 sm:grid-cols-3">
             {highlights.map((item, index) => (
