@@ -8,6 +8,11 @@ export const brand = {
   promise: 'Tradition in every pouch'
 };
 
+export const logoImage = {
+  src: 'https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/626207283_18081378854246902_31443326691815032_n.jpg?stp=c100.0.300.300a_dst-jpg_e35_s640x640_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=2ums_wEe45wQ7kNvwE5J1TW&_nc_oc=AdpoLGw1C7OxpaOsk7n07ypp3_GMN15pc8hwmwcC__jrJGSoE0eOL85Fmg7GEQpz20o&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_gid=VJvsbPvL3am8gtue3RIG3A&_nc_ss=7a289&oh=00_Af0xryrq5rKnd9SkElG67_kbbHd-sSGeWcM7P8btbQXuRw&oe=69E89757',
+  alt: 'Deedees Cooking Pouch logo image from Instagram'
+};
+
 export const featuredImage = {
   src: 'https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/534372025_17843253213558634_1012827675210431039_n.jpg?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=450_ujDqHrAQ7kNvwE8g4sd&_nc_oc=AdrM0wZrCc19WtIhLWKcLRw-MJQKjs6iWC96uTYgInRw9vKf68pASb9FBVIud73WTfo&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_gid=P-h3y_EicVXwG5xncz_IKA&_nc_ss=7a289&oh=00_Af05IUVQwHVUWCk5mdm6lEfdmwAE8NkAuTJ59Kpf7FwTGw&oe=69E7E8F0',
   alt: 'Deedees Cooking Pouch featured Instagram post'

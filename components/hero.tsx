@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, ExternalLink, Sparkles, MapPin } from 'lucide-react';
-import { brand, featuredImage, highlights } from '@/lib/content';
+import { ArrowRight, ExternalLink, MapPin } from 'lucide-react';
+import { brand, featuredImage, highlights, logoImage } from '@/lib/content';
 
 const spring = { type: 'spring', stiffness: 120, damping: 18, mass: 0.9 };
 const etsyUrl = 'https://deedeebespokestore.etsy.com/listing/4438824872';
@@ -16,9 +16,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={spring}
-            className="inline-flex items-center gap-2 rounded-full border border-violet-100 bg-white px-4 py-2 text-sm text-violet-800 shadow-sm"
+            className="inline-flex items-center gap-3 rounded-full border border-violet-100 bg-white px-4 py-2 text-sm text-violet-800 shadow-sm"
           >
-            <Sparkles className="h-4 w-4" />
+            <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full border border-violet-100 bg-white">
+              <img src={logoImage.src} alt={logoImage.alt} className="h-full w-full object-cover" />
+            </span>
             {brand.promise}
           </motion.div>
 
