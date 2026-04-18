@@ -1,5 +1,5 @@
-import { ArrowUpRight, Instagram } from 'iconoir-react';
-import { brand, footerLinks, logoImage } from '@/lib/content';
+import { ArrowUpRight, Instagram, Mail } from 'iconoir-react';
+import { brand, brandEmail, footerLinks, logoImage } from '@/lib/content';
 
 export function Footer() {
   return (
@@ -23,6 +23,13 @@ export function Footer() {
             <p className="mt-4 max-w-xl text-base leading-8 text-zinc-600">
               Premium pouches, family tradition, and Australia-wide delivery in one polished storefront.
             </p>
+
+            <a
+              href={`mailto:${brandEmail}`}
+              className="mt-5 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white px-5 py-3 text-sm font-semibold text-violet-900 transition hover:-translate-y-0.5 hover:bg-violet-50"
+            >
+              <Mail className="h-4 w-4" /> {brandEmail}
+            </a>
           </div>
 
           <div className="flex flex-col gap-4">

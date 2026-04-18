@@ -91,20 +91,22 @@ export const footerLinks = [
   { label: 'Etsy shop', href: etsyLink }
 ];
 
-export const instagramCards = [
+export const instagramReels = [
   {
-    title: 'Sunday kitchen table',
-    caption: 'Drop in an Instagram image or iframe embed here.',
-    tilt: '-2deg'
+    title: 'Kitchen reel one',
+    embedUrl: 'https://www.instagram.com/reel/DT4qwOGCRyP/embed/',
+    caption: 'Embedding ready for a reel or image drop-in.'
   },
   {
-    title: 'Prep and pour',
-    caption: 'Drop in an Instagram image or iframe embed here.',
-    tilt: '2deg'
-  },
-  {
-    title: 'Family tradition',
-    caption: 'Drop in an Instagram image or iframe embed here.',
-    tilt: '-1deg'
+    title: 'Kitchen reel two',
+    embedUrl: 'https://www.instagram.com/reel/DVKMV0hEnQL/embed/',
+    caption: 'Embedding ready for a reel or image drop-in.'
   }
 ];
+
+export const instagramPlaceholderCard = {
+  title: 'Family table moments',
+  caption: 'A future slot for an image, post, or iframe embed.'
+};
+
+export const brandEmail = 'eatablesfc@gmail.com';
