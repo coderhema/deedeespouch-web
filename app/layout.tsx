@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     description:
       'One versatile Nigerian food pouch for smooth pap, Moi Moi, Agidi, Ekuru, and everyday family cooking with Australia-wide delivery.',
     images: [featuredImage.src]
+  },
+  icons: {
+    icon: [{ url: '/Deedees%20Bespoke%20logo.svg' }]
   }
 };
 

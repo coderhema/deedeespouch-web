@@ -48,7 +48,7 @@ export function AudienceSection() {
               viewport={{ once: true, margin: '-10% 0px' }}
               transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] as const, delay: index * 0.05 }}
               whileHover={{ y: -4 }}
-              className="rounded-[1.5rem] border border-violet-100 bg-white p-6 shadow-[0_16px_50px_rgba(111,57,231,0.06)]"
+              className="rounded-[1.75rem] border border-violet-100 bg-white p-6 sm:p-7"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-violet-700/70">Audience</p>
               <h3 className="mt-3 text-2xl font-bold tracking-[-0.04em] text-ink sm:text-3xl">{section.title}</h3>

@@ -9,13 +9,12 @@ const reveal = {
 };
 
 const transition = { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const };
-const spring = { type: 'spring' as const, stiffness: 240, damping: 24, mass: 0.9 };
 
 export function FeatureGrid() {
   return (
     <section id="story" className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: '-10% 0px' }} variants={reveal} transition={transition}>
             <p className="text-xs font-semibold uppercase tracking-[0.34em] text-violet-700/75">Story</p>
             <h2 className="mt-4 max-w-xl text-4xl font-bold tracking-[-0.04em] text-ink sm:text-5xl">
@@ -26,9 +25,9 @@ export function FeatureGrid() {
               traditional meals. It keeps the cooking experience calm, elevated, and grounded in the comfort of home.
             </p>
 
-            <div className="mt-8 rounded-[1.75rem] border border-violet-100 bg-white p-6 shadow-[0_18px_60px_rgba(111,57,231,0.06)]">
+            <div className="mt-8 rounded-[2rem] border border-violet-100 bg-white p-6 sm:p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-violet-700/70">Why people love it</p>
-              <ul className="mt-4 space-y-4">
+              <ul className="mt-5 space-y-4">
                 {storyBullets.map((item) => (
                   <li key={item} className="flex gap-3 text-sm leading-7 text-zinc-700 sm:text-base">
                     <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-violet-700" />
@@ -47,10 +46,10 @@ export function FeatureGrid() {
             transition={{ ...transition, delay: 0.08 }}
             className="relative"
           >
-            <div className="absolute inset-x-8 top-8 -z-10 h-full rounded-[2.5rem] bg-violet-200/20 blur-3xl" />
-            <div className="overflow-hidden rounded-[2rem] border border-violet-100 bg-white shadow-[0_20px_70px_rgba(111,57,231,0.08)]">
+            <div className="absolute inset-x-10 top-10 -z-10 h-full rounded-[2.5rem] bg-violet-200/20 blur-3xl" />
+            <div className="overflow-hidden rounded-[2rem] border border-violet-100 bg-white">
               <img src={featuredImage.src} alt={featuredImage.alt} className="h-[22rem] w-full object-cover sm:h-[26rem]" loading="lazy" decoding="async" />
-              <div className="p-6 sm:p-8">
+              <div className="border-t border-violet-100 p-6 sm:p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-violet-700/70">All-in-one convenience</p>
                 <h3 className="mt-3 text-3xl font-bold tracking-[-0.04em] text-ink">
                   One pouch, multiple traditional uses.
@@ -63,7 +62,7 @@ export function FeatureGrid() {
           </motion.div>
         </div>
 
-        <div id="why" className="mt-10 grid gap-4 md:grid-cols-3">
+        <div id="why" className="mt-10 grid gap-4 lg:grid-cols-3">
           {whyBenefits.map((benefit, index) => (
             <motion.article
               key={benefit.title}
@@ -73,7 +72,7 @@ export function FeatureGrid() {
               variants={reveal}
               transition={{ ...transition, delay: index * 0.05 }}
               whileHover={{ y: -4 }}
-              className="rounded-[1.5rem] border border-violet-100 bg-white p-6 shadow-[0_16px_50px_rgba(111,57,231,0.06)]"
+              className="rounded-[1.75rem] border border-violet-100 bg-white p-6 sm:p-7"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-violet-700/70">Why Deedees</p>
               <h3 className="mt-3 text-2xl font-bold tracking-[-0.04em] text-ink">{benefit.title}</h3>

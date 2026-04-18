@@ -22,17 +22,16 @@ const itemVariants = {
 
 const spring = { type: 'spring' as const, stiffness: 240, damping: 24, mass: 0.9 };
 
-function InstagramReelEmbed({ title, permalink, caption, tilt }: { title: string; permalink: string; caption: string; tilt: number }) {
+function InstagramReelEmbed({ title, permalink, caption }: { title: string; permalink: string; caption: string }) {
   return (
     <motion.article
       variants={itemVariants}
-      style={{ rotate: tilt }}
-      whileHover={{ y: -6, rotate: 0 }}
+      whileHover={{ y: -6 }}
       transition={spring}
-      className="rounded-[2rem] border border-violet-100 bg-white p-5 shadow-[0_18px_50px_rgba(111,57,231,0.08)]"
+      className="rounded-[1.75rem] border border-violet-100 bg-white p-5 sm:p-6"
     >
       <div className="flex items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-violet-700">
+        <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-violet-700">
           <Instagram className="h-4 w-4" /> Reel
         </span>
         <a href={permalink} target="_blank" rel="noreferrer" className="text-xs font-medium text-violet-700/70 transition hover:text-violet-900">
@@ -40,7 +39,7 @@ function InstagramReelEmbed({ title, permalink, caption, tilt }: { title: string
         </a>
       </div>
 
-      <div className="mt-4 aspect-[9/16] overflow-hidden rounded-[1.5rem] border border-violet-100 bg-[linear-gradient(180deg,#fbf8ff_0%,#ffffff_100%)]">
+      <div className="mt-4 overflow-hidden rounded-[1.5rem]">
         <blockquote
           className="instagram-media h-full w-full"
           data-instgrm-permalink={permalink}
@@ -86,8 +85,8 @@ export function InstagramSection() {
             A quiet, editorial reel gallery with room to breathe.
           </motion.h2>
           <motion.p variants={itemVariants} className="mt-5 text-base leading-8 text-zinc-600 sm:text-lg">
-            Three Instagram reels, framed in a premium layout with subtle tilt, organic spacing, and a 9:16 ratio that
-            keeps the media feeling intentional.
+            Three Instagram reels, framed in a premium layout with subtle presence, organic spacing, and a 9:16 ratio
+            that keeps the media feeling intentional.
           </motion.p>
         </motion.div>
 
@@ -98,8 +97,8 @@ export function InstagramSection() {
           variants={sectionVariants}
           className="mt-12 grid gap-6 md:grid-cols-3"
         >
-          {instagramReels.map((reel, index) => (
-            <InstagramReelEmbed key={reel.title} {...reel} tilt={index === 0 ? -1 : index === 1 ? 1 : -0.5} />
+          {instagramReels.map((reel) => (
+            <InstagramReelEmbed key={reel.title} {...reel} />
           ))}
         </motion.div>
       </div>

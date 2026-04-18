@@ -24,11 +24,13 @@ export function Header() {
 
   return (
     <header className="sticky top-4 z-50 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-white/70 bg-white/80 px-3 py-3 shadow-[0_20px_70px_rgba(107,33,168,0.08)] backdrop-blur-xl sm:px-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-white/70 bg-white/88 px-3 py-3 shadow-[0_14px_40px_rgba(107,33,168,0.08)] backdrop-blur-xl sm:px-4">
         <a href="#hero" className="flex min-w-0 items-center rounded-full px-2 py-1 transition hover:bg-violet-50">
-          <span className="flex h-10 items-center rounded-full px-2 text-sm font-semibold tracking-[0.18em] text-violet-900 sm:text-base">
-            Deedees Cooking Pouch
-          </span>
+          <img
+            src="/Deedee%27s%20Bespoke%20horizontal.png"
+            alt="Deedee's Bespokes horizontal logo"
+            className="h-10 w-[9.5rem] object-contain object-left sm:w-[12.5rem] lg:w-[14rem]"
+          />
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
@@ -84,7 +86,7 @@ export function Header() {
         />
 
         <div
-          className={`fixed left-4 right-4 top-20 z-50 overflow-hidden rounded-[1.75rem] border border-violet-100 bg-white shadow-[0_30px_80px_rgba(107,33,168,0.18)] transition-all duration-300 ease-out ${open ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}
+          className={`fixed left-4 right-4 top-20 z-50 overflow-hidden rounded-[1.75rem] border border-violet-100 bg-white shadow-[0_24px_70px_rgba(107,33,168,0.16)] transition-all duration-300 ease-out ${open ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}
         >
           <div className="flex items-center justify-between border-b border-violet-100 px-5 py-4">
             <p className="text-sm font-semibold text-violet-900">Menu</p>
