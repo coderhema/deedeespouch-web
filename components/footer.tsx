@@ -1,20 +1,51 @@
+import { ArrowUpRight, ExternalLink } from 'lucide-react';
+import { brand, footerLinks, logoImage } from '@/lib/content';
+
 export function Footer() {
   return (
-    <footer id="contact" className="border-t border-violet-100 bg-white px-5 py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-violet-700/70">Next step</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-ink">Launch the premium storefront.</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-600">
-            This initial build is designed to become the home for product storytelling, delivery trust, and clean conversion.
-          </p>
+    <footer id="footer" className="border-t border-violet-100 bg-white px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl rounded-[2rem] border border-violet-100 bg-[linear-gradient(180deg,#ffffff_0%,#faf5ff_100%)] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_20px_70px_rgba(111,57,231,0.08)] sm:p-8">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3">
+              <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-violet-100 bg-white shadow-sm">
+                <img src={logoImage.src} alt={logoImage.alt} className="h-full w-full object-cover" />
+              </span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-violet-700/75">Deedees Cooking Pouch</p>
+                <p className="mt-1 text-sm text-zinc-500">{brand.promise}</p>
+              </div>
+            </div>
+
+            <h2 className="mt-6 text-3xl font-semibold tracking-[-0.03em] text-ink sm:text-4xl">
+              Premium traditional food, ready for modern delivery.
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-8 text-zinc-600">
+              The storefront is designed to feel calm, expensive, and highly usable — the kind of page that lets the
+              product and the brand speak with confidence.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            {footerLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-between gap-6 rounded-full border border-violet-200 bg-white px-5 py-3 text-sm font-medium text-violet-900 transition hover:-translate-y-0.5 hover:bg-violet-50"
+              >
+                <span>{link.label}</span>
+                {link.label === 'Instagram' ? <ExternalLink className="h-4 w-4" /> : <ArrowUpRight className="h-4 w-4" />}
+              </a>
+            ))}
+          </div>
         </div>
-        <a
-          href="https://www.instagram.com/deedeespouch"
-          className="inline-flex items-center justify-center rounded-full bg-violet-700 px-6 py-3.5 text-sm font-medium text-white transition hover:bg-violet-800"
-        >
-          Back to Instagram
-        </a>
+
+        <div className="mt-10 flex flex-col gap-3 border-t border-violet-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-zinc-500">Cook smart. Eat better. Tradition in every pouch.</p>
+          <p className="text-sm text-zinc-500">Australia delivery • Moi Moi • Agidi • Ekuru</p>
+        </div>
       </div>
     </footer>
   );

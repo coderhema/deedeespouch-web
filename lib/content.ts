@@ -15,56 +15,70 @@ export const logoImage = {
 
 export const featuredImage = {
   src: 'https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/534372025_17843253213558634_1012827675210431039_n.jpg?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=450_ujDqHrAQ7kNvwE8g4sd&_nc_oc=AdrM0wZrCc19WtIhLWKcLRw-MJQKjs6iWC96uTYgInRw9vKf68pASb9FBVIud73WTfo&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_gid=P-h3y_EicVXwG5xncz_IKA&_nc_ss=7a289&oh=00_Af05IUVQwHVUWCk5mdm6lEfdmwAE8NkAuTJ59Kpf7FwTGw&oe=69E7E8F0',
-  alt: 'Deedees Cooking Pouch featured Instagram post'
+  alt: 'Deedees Cooking Pouch featured product image from Instagram'
 };
 
-export const highlights = [
-  { label: 'Signature dishes', value: 'Moi Moi, Agidi, Ekuru' },
-  { label: 'Audience', value: 'Families, diaspora homes, busy professionals' },
-  { label: 'Positioning', value: 'Premium traditional food, delivered simply' }
+export const navigation = [
+  { label: 'Story', href: '#story' },
+  { label: 'Products', href: '#products' },
+  { label: 'Etsy', href: '#etsy' },
+  { label: 'Footer', href: '#footer' }
 ];
 
-export const pillars = [
-  {
-    title: 'Editorial premium',
-    copy:
-      'A restrained purple-and-white visual language with generous whitespace, sharp hierarchy, and luxury pacing.'
-  },
-  {
-    title: 'Trust through clarity',
-    copy:
-      'Clear delivery messaging, plain-language product benefits, and a clean pathway from appetite to checkout.'
-  },
-  {
-    title: 'Motion with restraint',
-    copy:
-      'Spring-based interactions that feel tactile and polished, never noisy.'
-  }
+export const storyNotes = [
+  'Cook smart. Eat better.',
+  'Moi Moi | Agidi | Ekuru 🍲',
+  'Tradition in every pouch 🥘',
+  'Australia delivery'
 ];
 
-export const menu = [
+export const storyBullets = [
+  'Clean cooking with less mess',
+  'Reusable, leak-proof, BPA-free',
+  'Built for home kitchens, parties, and catering',
+  'Designed to make traditional food feel premium and effortless'
+];
+
+export interface ProductCard {
+  number: string;
+  name: string;
+  description: string;
+  details: string[];
+}
+
+export const products: ProductCard[] = [
   {
+    number: '01',
     name: 'Moi Moi Pouch',
-    note: 'Soft, savoury, traditional protein-rich comfort with a polished finish.'
+    description:
+      'Soft, savoury, and rich with the comfort of a family-style classic, presented with a polished finish.',
+    details: ['Protein-rich', 'Perfect for bulk cooking', 'Clean release and tidy presentation']
   },
   {
+    number: '02',
     name: 'Agidi Pouch',
-    note: 'Smooth, delicate, and designed to sit beautifully beside stews and soups.'
+    description:
+      'Smooth and delicate, made to sit neatly beside stews and sauces without losing its shape or elegance.',
+    details: ['Minimal mess', 'Ideal for event prep', 'Elegant, consistent portions']
   },
   {
+    number: '03',
     name: 'Ekuru Pouch',
-    note: 'A lighter classic with a refined texture and nostalgic appeal.'
+    description:
+      'A lighter classic with a nostalgic texture and a modern, premium delivery experience.',
+    details: ['Light texture', 'Traditional appeal', 'Reusable format']
   }
 ];
 
-export const process = [
-  'Choose the pouch that fits the moment.',
-  'Order for Australia delivery with a simple premium checkout flow.',
-  'Serve tradition fast, clean, and consistently.'
+export const etsyLink = 'https://deedeebespokestore.etsy.com/listing/4438824872';
+
+export const etsyHighlights = [
+  'Fast ordering',
+  'Easy delivery',
+  'Trusted handcrafted feel'
 ];
 
-export const trust = [
-  'Made for family tables and diaspora kitchens',
-  'Designed to feel handcrafted, not mass-market',
-  'Built to support a strong, premium social-first brand'
+export const footerLinks = [
+  { label: 'Instagram', href: 'https://www.instagram.com/deedeespouch/' },
+  { label: 'Etsy shop', href: etsyLink }
 ];

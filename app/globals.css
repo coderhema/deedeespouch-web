@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -19,21 +20,28 @@ body {
   color: #140f1f;
   font-family: var(--font-sans), system-ui, sans-serif;
   background:
-    radial-gradient(circle at top, rgba(137, 82, 255, 0.12), transparent 30%),
-    linear-gradient(180deg, #ffffff 0%, #fbf8ff 45%, #ffffff 100%);
+    radial-gradient(circle at top, rgba(137, 82, 255, 0.12), transparent 28%),
+    linear-gradient(180deg, #fafafa 0%, #fdfbff 42%, #fafafa 100%);
   min-height: 100vh;
+  overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-display), Georgia, serif;
 }
 
 ::selection {
   background: rgba(137, 82, 255, 0.18);
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 @layer utilities {
