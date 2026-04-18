@@ -9,7 +9,7 @@ import { Footer } from '@/components/footer';
 
 export default function Home() {
   return (
-    <main className="overflow-x-hidden">
+    <main>
       <Header />
       <Hero />
       <FeatureGrid />
