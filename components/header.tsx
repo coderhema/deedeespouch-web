@@ -26,7 +26,7 @@ export function Header() {
     <header className="sticky top-4 z-50 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-white/70 bg-white/80 px-3 py-3 shadow-[0_20px_70px_rgba(107,33,168,0.08)] backdrop-blur-xl sm:px-4">
         <a href="#hero" className="flex min-w-0 items-center rounded-full px-2 py-1 transition hover:bg-violet-50">
-          <span className="flex h-10 w-[9.5rem] items-center overflow-hidden sm:w-[11.5rem] lg:w-[13rem]">
+          <span className="flex h-10 w-[11rem] items-center overflow-hidden sm:w-[13rem] lg:w-[15rem]">
             <img src={headerLogoImage.src} alt={headerLogoImage.alt} className="h-full w-full object-contain object-left" />
           </span>
         </a>

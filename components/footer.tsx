@@ -13,8 +13,8 @@ export function Footer() {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3">
-              <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-violet-100 bg-white shadow-sm">
-                <img src={logoImage.src} alt={logoImage.alt} className="h-full w-full object-cover" />
+              <span className="flex h-10 w-[11rem] items-center overflow-hidden rounded-full border border-violet-100 bg-white shadow-sm sm:w-[13rem]">
+                <img src={logoImage.src} alt={logoImage.alt} className="h-full w-full object-contain object-left" />
               </span>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.32em] text-violet-700/75">Deedees Cooking Pouch</p>

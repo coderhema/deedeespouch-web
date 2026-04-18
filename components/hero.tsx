@@ -99,9 +99,9 @@ export function Hero() {
                     <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-violet-800 backdrop-blur">
                       DeedeesPouch
                     </span>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-zinc-700 backdrop-blur">
-                      <img src={logoImage.src} alt={logoImage.alt} className="h-4 w-4 rounded-full object-cover" />
-                      {brand.location}
+                    <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-zinc-700 backdrop-blur">
+                      <img src={logoImage.src} alt={logoImage.alt} className="h-4 w-20 object-contain object-left" />
+                      <span className="sr-only">{brand.location}</span>
                     </span>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">

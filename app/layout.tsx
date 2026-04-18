@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Abril_Fatface, Plus_Jakarta_Sans } from 'next/font/google';
+import { Dancing_Script, Plus_Jakarta_Sans } from 'next/font/google';
 import type { ReactNode } from 'react';
 import { featuredImage, faviconImage } from '@/lib/content';
 import './globals.css';
 
-const abrilFatface = Abril_Fatface({ subsets: ['latin'], variable: '--font-display', weight: '400', display: 'swap' });
+const dancingScript = Dancing_Script({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${abrilFatface.variable} ${plusJakartaSans.variable} antialiased`}>
+      <body className={`${dancingScript.variable} ${plusJakartaSans.variable} antialiased`}>
         {children}
       </body>
     </html>
