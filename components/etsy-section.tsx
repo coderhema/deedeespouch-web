@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'iconoir-react';
+import { ArrowRight, Star } from 'iconoir-react';
 import { etsyHighlights, etsyLink } from '@/lib/content';
 
 const reveal = {
