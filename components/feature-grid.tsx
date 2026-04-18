@@ -18,7 +18,7 @@ export function FeatureGrid() {
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: '-10% 0px' }} variants={reveal} transition={transition}>
             <p className="text-xs font-semibold uppercase tracking-[0.34em] text-violet-700/75">Story</p>
             <h2 className="mt-4 max-w-xl text-4xl font-bold tracking-[-0.04em] text-ink sm:text-5xl">
-              A family recipe turned into a more versatile everyday ritual.
+              A family recipe turned into a more versatile everyday tradition.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-zinc-600 sm:text-lg">
               Deedees Cooking Pouch is built around the idea that one thoughtfully made pouch can carry several
@@ -55,7 +55,7 @@ export function FeatureGrid() {
                   One pouch, multiple traditional uses.
                 </h3>
                 <p className="mt-4 text-base leading-8 text-zinc-600">
-                  Built for the people who want faster prep without sacrificing the taste or the ritual.
+                  Built for the people who want faster prep without sacrificing the taste of a homemade meal.
                 </p>
               </div>
             </div>

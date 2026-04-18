@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Star } from 'iconoir-react';
+import { ArrowRight, ShoppingBag } from 'iconoir-react';
 import { etsyHighlights, etsyLink } from '@/lib/content';
 
 const reveal = {
@@ -19,7 +19,7 @@ export function EtsySection() {
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: '-10% 0px' }} variants={reveal} transition={transition}>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-violet-100/90 backdrop-blur">
-              <Star className="h-4 w-4" /> Order Now
+              <ShoppingBag className="h-4 w-4" /> Order Now
             </p>
             <h2 className="mt-5 max-w-2xl text-4xl font-extrabold tracking-[-0.03em] sm:text-5xl">
               Shop the collection today and bring authentic Nigerian flavors home.

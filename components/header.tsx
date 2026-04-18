@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Menu, Xmark } from 'iconoir-react';
+import { Menu, ShoppingBag, Xmark } from 'iconoir-react';
 import { navigation, etsyLink } from '@/lib/content';
 
 export function Header() {
@@ -57,7 +57,7 @@ export function Header() {
             transition={{ type: 'spring', stiffness: 240, damping: 24, mass: 0.9 }}
             className="hidden items-center gap-2 rounded-full bg-violet-800 px-4 py-2 text-sm font-medium text-white lg:inline-flex"
           >
-            Order Now <ArrowRight className="h-4 w-4" />
+            Order Now <ShoppingBag className="h-4 w-4" />
           </motion.a>
           <motion.button
             type="button"
@@ -117,7 +117,7 @@ export function Header() {
               rel="noreferrer"
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-violet-800 px-4 py-3.5 text-sm font-semibold text-white"
             >
-              Order Now <ArrowRight className="h-4 w-4" />
+              Order Now <ShoppingBag className="h-4 w-4" />
             </a>
           </nav>
         </div>

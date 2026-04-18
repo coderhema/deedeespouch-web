@@ -31,7 +31,7 @@ export function AudienceSection() {
             Who It’s For
           </motion.p>
           <motion.h2 variants={item} className="mt-4 text-4xl font-bold tracking-[-0.04em] text-ink sm:text-5xl">
-            Made for people who want nourishment, ease, and a beautiful ritual.
+            Made for people who want nourishment, ease, and a beautiful tradition.
           </motion.h2>
           <motion.p variants={item} className="mt-5 text-base leading-8 text-zinc-600 sm:text-lg">
             A premium one-pouch format that supports everyday cooking, family care, and traditional meals without the
