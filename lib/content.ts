@@ -1,11 +1,11 @@
 export const brand = {
   name: 'Deedees Cooking Pouch',
   handle: '@deedeespouch',
-  tagline: 'Cook smart. Eat better.',
+  tagline: 'Authentic Nigerian flavors, delivered to your door.',
   description:
-    'Premium traditional Nigerian meals prepared for modern, busy families who want convenience without losing taste, ritual, or warmth.',
+    'Traditional Nigerian foods in premium pouches for fast, tidy cooking and reliable delivery to Australia.',
   location: 'Australia delivery',
-  promise: 'Tradition in every pouch'
+  promise: 'Cook smart. Eat better.'
 };
 
 export const logoImage = {
@@ -15,28 +15,36 @@ export const logoImage = {
 
 export const featuredImage = {
   src: 'https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/534372025_17843253213558634_1012827675210431039_n.jpg?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=450_ujDqHrAQ7kNvwE8g4sd&_nc_oc=AdrM0wZrCc19WtIhLWKcLRw-MJQKjs6iWC96uTYgInRw9vKf68pASb9FBVIud73WTfo&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_gid=P-h3y_EicVXwG5xncz_IKA&_nc_ss=7a289&oh=00_Af05IUVQwHVUWCk5mdm6lEfdmwAE8NkAuTJ59Kpf7FwTGw&oe=69E7E8F0',
-  alt: 'Deedees Cooking Pouch featured product image from Instagram'
+  alt: 'Deedees Cooking Pouch featured Instagram post'
 };
 
 export const navigation = [
   { label: 'Story', href: '#story' },
+  { label: 'Why Deedees', href: '#why' },
   { label: 'Products', href: '#products' },
-  { label: 'Etsy', href: '#etsy' },
-  { label: 'Footer', href: '#footer' }
-];
-
-export const storyNotes = [
-  'Cook smart. Eat better.',
-  'Moi Moi | Agidi | Ekuru 🍲',
-  'Tradition in every pouch 🥘',
-  'Australia delivery'
+  { label: 'From Our Kitchen', href: '#from-our-kitchen' },
+  { label: 'Order Now', href: '#order-now' }
 ];
 
 export const storyBullets = [
-  'Clean cooking with less mess',
-  'Reusable, leak-proof, BPA-free',
-  'Built for home kitchens, parties, and catering',
-  'Designed to make traditional food feel premium and effortless'
+  'Family recipe roots and Nigerian heritage in every pouch',
+  'Convenient heat-and-eat format made for busy homes',
+  'Premium quality with a clean, elegant presentation'
+];
+
+export const whyBenefits = [
+  {
+    title: 'Authentic recipe',
+    description: 'Built around familiar Nigerian flavors and the comforting taste people grew up with.'
+  },
+  {
+    title: 'Heat-and-eat convenience',
+    description: 'A pouch format that keeps prep simple, tidy, and quick without losing the tradition.'
+  },
+  {
+    title: 'Australia-wide delivery',
+    description: 'Order once and get dependable delivery to your door anywhere across Australia.'
+  }
 ];
 
 export interface ProductCard {
@@ -51,34 +59,52 @@ export const products: ProductCard[] = [
     number: '01',
     name: 'Moi Moi Pouch',
     description:
-      'Soft, savoury, and rich with the comfort of a family-style classic, presented with a polished finish.',
-    details: ['Protein-rich', 'Perfect for bulk cooking', 'Clean release and tidy presentation']
+      'Soft, savory, and satisfying. A traditional classic made for easy preparation and a clean, beautiful finish.',
+    details: ['Rich flavor', 'Family favorite', 'Perfect for gatherings']
   },
   {
     number: '02',
     name: 'Agidi Pouch',
     description:
-      'Smooth and delicate, made to sit neatly beside stews and sauces without losing its shape or elegance.',
-    details: ['Minimal mess', 'Ideal for event prep', 'Elegant, consistent portions']
+      'Smooth and light, with the calm texture and dependable structure that works well for everyday meals and events.',
+    details: ['Simple to serve', 'Great with stews', 'Premium presentation']
   },
   {
     number: '03',
     name: 'Ekuru Pouch',
     description:
-      'A lighter classic with a nostalgic texture and a modern, premium delivery experience.',
-    details: ['Light texture', 'Traditional appeal', 'Reusable format']
+      'A traditional favorite with a clean, modern pouch format that keeps the process easy from kitchen to table.',
+    details: ['Traditional taste', 'Less mess', 'Reliable convenience']
   }
 ];
 
 export const etsyLink = 'https://deedeebespokestore.etsy.com/listing/4438824872';
 
 export const etsyHighlights = [
-  'Fast ordering',
-  'Easy delivery',
-  'Trusted handcrafted feel'
+  'Order Now',
+  'Shop the Collection',
+  'Get Yours Today'
 ];
 
 export const footerLinks = [
   { label: 'Instagram', href: 'https://www.instagram.com/deedeespouch/' },
   { label: 'Etsy shop', href: etsyLink }
+];
+
+export const instagramCards = [
+  {
+    title: 'Sunday kitchen table',
+    caption: 'Drop in an Instagram image or iframe embed here.',
+    tilt: '-2deg'
+  },
+  {
+    title: 'Prep and pour',
+    caption: 'Drop in an Instagram image or iframe embed here.',
+    tilt: '2deg'
+  },
+  {
+    title: 'Family tradition',
+    caption: 'Drop in an Instagram image or iframe embed here.',
+    tilt: '-1deg'
+  }
 ];

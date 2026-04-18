@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'iconoir-react';
 import { products, etsyLink } from '@/lib/content';
 
 const reveal = {
@@ -17,11 +17,12 @@ export function MenuSection() {
       <div className="mx-auto max-w-6xl">
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: '-10% 0px' }} variants={reveal} transition={transition} className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.32em] text-violet-700/75">Products</p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.03em] text-ink sm:text-5xl">
-            Signature pouches, presented as a premium collection.
+          <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.03em] text-ink sm:text-5xl">
+            Shop the collection of premium Nigerian pouches.
           </h2>
           <p className="mt-5 text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8">
-            Three core products, each described with the confidence and restraint of a modern editorial storefront.
+            Every pouch is designed to feel trusted, memorable, and easy to buy again — the kind of product page that
+            turns interest into action.
           </p>
         </motion.div>
 
@@ -43,7 +44,7 @@ export function MenuSection() {
                   </span>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-violet-700/70">Signature pouch</p>
-                    <h3 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-ink sm:text-3xl">{product.name}</h3>
+                    <h3 className="mt-2 text-2xl font-extrabold tracking-[-0.03em] text-ink sm:text-3xl">{product.name}</h3>
                     <p className="mt-4 max-w-3xl text-base leading-8 text-zinc-600">{product.description}</p>
                   </div>
                 </div>
@@ -52,9 +53,9 @@ export function MenuSection() {
                   href={etsyLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-fit items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-5 py-3 text-sm font-medium text-violet-900 transition group-hover:bg-violet-100"
+                  className="inline-flex w-fit items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-5 py-3 text-sm font-semibold text-violet-900 transition group-hover:bg-violet-100"
                 >
-                  Buy on Etsy <ArrowRight className="h-4 w-4" />
+                  Get Yours Today <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
 

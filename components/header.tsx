@@ -1,23 +1,42 @@
-import { ArrowRight } from 'lucide-react';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { ArrowRight, Menu, Xmark } from 'iconoir-react';
 import { logoImage, navigation, etsyLink } from '@/lib/content';
 
 export function Header() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    document.body.style.overflow = open ? 'hidden' : '';
+
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [open]);
+
   return (
-    <div className="pointer-events-none sticky top-4 z-50 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/70 bg-white/80 px-3 py-3 shadow-soft backdrop-blur-xl pointer-events-auto">
+    <header className="sticky top-4 z-50 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/70 bg-white/80 px-3 py-3 shadow-[0_20px_70px_rgba(107,33,168,0.08)] backdrop-blur-xl">
         <a href="#hero" className="flex items-center gap-3 rounded-full px-2 py-1 transition hover:bg-violet-50">
           <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-violet-100 bg-white">
             <img src={logoImage.src} alt={logoImage.alt} className="h-full w-full object-cover" />
           </span>
           <span className="hidden sm:block">
-            <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-violet-700/75">
+            <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-violet-800/75">
               Deedees Cooking Pouch
             </span>
-            <span className="block text-sm text-zinc-500">Premium traditional food, polished for modern delivery.</span>
+            <span className="block text-sm text-zinc-500">Authentic Nigerian flavors, delivered to your door.</span>
           </span>
         </a>
 
-        <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
           {navigation.map((item) => (
             <a
               key={item.href}
@@ -29,15 +48,75 @@ export function Header() {
           ))}
         </nav>
 
-        <a
-          href={etsyLink}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-violet-800 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-violet-900"
-        >
-          Shop Etsy <ArrowRight className="h-4 w-4" />
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={etsyLink}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden items-center gap-2 rounded-full bg-violet-800 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-violet-900 lg:inline-flex"
+          >
+            Order Now <ArrowRight className="h-4 w-4" />
+          </a>
+          <button
+            type="button"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+            onClick={() => setOpen((value) => !value)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-violet-100 bg-white text-violet-900 shadow-sm transition hover:bg-violet-50 lg:hidden"
+          >
+            {open ? <Xmark className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
-    </div>
+
+      <div
+        id="mobile-menu"
+        className={`lg:hidden ${open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`}
+        aria-hidden={!open}
+      >
+        <button
+          type="button"
+          aria-label="Close mobile navigation overlay"
+          onClick={() => setOpen(false)}
+          className={`fixed inset-0 z-40 bg-black/20 transition duration-300 ${open ? 'visible' : 'invisible'}`}
+        />
+
+        <div
+          className={`fixed left-4 right-4 top-20 z-50 overflow-hidden rounded-[1.75rem] border border-violet-100 bg-white shadow-[0_30px_80px_rgba(107,33,168,0.18)] transition-all duration-300 ease-out ${open ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}
+        >
+          <div className="flex items-center justify-between border-b border-violet-100 px-5 py-4">
+            <p className="text-sm font-semibold text-violet-900">Menu</p>
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-violet-100 bg-violet-50 text-violet-900"
+            >
+              <Xmark className="h-5 w-5" />
+            </button>
+          </div>
+          <nav aria-label="Mobile primary" className="grid gap-1 p-3">
+            {navigation.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="rounded-2xl px-4 py-4 text-base font-medium text-zinc-700 transition hover:bg-violet-50 hover:text-violet-900"
+              >
+                {item.label}
+              </a>
+            ))}
+            <a
+              href={etsyLink}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-violet-800 px-4 py-3.5 text-sm font-semibold text-white"
+            >
+              Order Now <ArrowRight className="h-4 w-4" />
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
   );
 }

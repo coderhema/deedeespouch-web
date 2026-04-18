@@ -12,16 +12,16 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
+  scroll-padding-top: 7rem;
 }
 
 body {
   margin: 0;
-  color: #140f1f;
+  color: #120b1d;
   font-family: var(--font-sans), system-ui, sans-serif;
   background:
-    radial-gradient(circle at top, rgba(137, 82, 255, 0.12), transparent 28%),
-    linear-gradient(180deg, #fafafa 0%, #fdfbff 42%, #fafafa 100%);
+    radial-gradient(circle at top, rgba(107, 33, 168, 0.12), transparent 30%),
+    linear-gradient(180deg, #fafafa 0%, #fffdfd 50%, #fafafa 100%);
   min-height: 100vh;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
@@ -31,17 +31,21 @@ body {
 h1,
 h2,
 h3,
-h4 {
-  font-family: var(--font-display), Georgia, serif;
-}
-
-::selection {
-  background: rgba(137, 82, 255, 0.18);
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+
+::selection {
+  background: rgba(107, 33, 168, 0.18);
 }
 
 @layer utilities {

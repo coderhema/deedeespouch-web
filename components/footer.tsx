@@ -1,4 +1,4 @@
-import { ArrowUpRight, ExternalLink } from 'lucide-react';
+import { ArrowUpRight, Instagram } from 'iconoir-react';
 import { brand, footerLinks, logoImage } from '@/lib/content';
 
 export function Footer() {
@@ -17,12 +17,11 @@ export function Footer() {
               </div>
             </div>
 
-            <h2 className="mt-6 text-3xl font-semibold tracking-[-0.03em] text-ink sm:text-4xl">
-              Premium traditional food, ready for modern delivery.
+            <h2 className="mt-6 text-3xl font-extrabold tracking-[-0.03em] text-ink sm:text-4xl">
+              Authentic Nigerian flavors, delivered to your door.
             </h2>
             <p className="mt-4 max-w-xl text-base leading-8 text-zinc-600">
-              The storefront is designed to feel calm, expensive, and highly usable — the kind of page that lets the
-              product and the brand speak with confidence.
+              Premium pouches, family tradition, and Australia-wide delivery in one polished storefront.
             </p>
           </div>
 
@@ -33,10 +32,13 @@ export function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-between gap-6 rounded-full border border-violet-200 bg-white px-5 py-3 text-sm font-medium text-violet-900 transition hover:-translate-y-0.5 hover:bg-violet-50"
+                className="inline-flex items-center justify-between gap-6 rounded-full border border-violet-200 bg-white px-5 py-3 text-sm font-semibold text-violet-900 transition hover:-translate-y-0.5 hover:bg-violet-50"
               >
-                <span>{link.label}</span>
-                {link.label === 'Instagram' ? <ExternalLink className="h-4 w-4" /> : <ArrowUpRight className="h-4 w-4" />}
+                <span className="inline-flex items-center gap-2">
+                  {link.label === 'Instagram' ? <Instagram className="h-4 w-4" /> : <ArrowUpRight className="h-4 w-4" />}
+                  {link.label}
+                </span>
+                <ArrowUpRight className="h-4 w-4" />
               </a>
             ))}
           </div>
@@ -44,7 +46,7 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col gap-3 border-t border-violet-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-zinc-500">Cook smart. Eat better. Tradition in every pouch.</p>
-          <p className="text-sm text-zinc-500">Australia delivery • Moi Moi • Agidi • Ekuru</p>
+          <p className="text-sm text-zinc-500">Moi Moi • Agidi • Ekuru • Australia delivery</p>
         </div>
       </div>
     </footer>
