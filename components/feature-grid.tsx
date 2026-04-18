@@ -46,6 +46,7 @@ export function FeatureGrid() {
               viewport={{ once: true, margin: '-8% 0px' }}
               variants={reveal}
               transition={{ ...transition, delay: index * 0.05 }}
+              whileHover={{ y: -4 }}
               className="rounded-[1.5rem] border border-violet-100 bg-white p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_16px_50px_rgba(111,57,231,0.07)]"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-violet-700/70">Why Deedees</p>

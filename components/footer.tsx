@@ -1,5 +1,10 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import { ArrowUpRight, Instagram, Mail } from 'iconoir-react';
 import { brand, brandEmail, footerLinks, logoImage } from '@/lib/content';
+
+const spring = { type: 'spring' as const, stiffness: 240, damping: 24, mass: 0.9 };
 
 export function Footer() {
   return (
@@ -24,29 +29,35 @@ export function Footer() {
               Premium pouches, family tradition, and Australia-wide delivery in one polished storefront.
             </p>
 
-            <a
+            <motion.a
               href={`mailto:${brandEmail}`}
-              className="mt-5 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white px-5 py-3 text-sm font-semibold text-violet-900 transition hover:-translate-y-0.5 hover:bg-violet-50"
+              whileHover={{ y: -3, scale: 1.01 }}
+              whileTap={{ scale: 0.98 }}
+              transition={spring}
+              className="mt-5 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white px-5 py-3 text-sm font-semibold text-violet-900"
             >
               <Mail className="h-4 w-4" /> {brandEmail}
-            </a>
+            </motion.a>
           </div>
 
           <div className="flex flex-col gap-4">
             {footerLinks.map((link) => (
-              <a
+              <motion.a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-between gap-6 rounded-full border border-violet-200 bg-white px-5 py-3 text-sm font-semibold text-violet-900 transition hover:-translate-y-0.5 hover:bg-violet-50"
+                whileHover={{ y: -3, scale: 1.01 }}
+                whileTap={{ scale: 0.98 }}
+                transition={spring}
+                className="inline-flex items-center justify-between gap-6 rounded-full border border-violet-200 bg-white px-5 py-3 text-sm font-semibold text-violet-900"
               >
                 <span className="inline-flex items-center gap-2">
                   {link.label === 'Instagram' ? <Instagram className="h-4 w-4" /> : <ArrowUpRight className="h-4 w-4" />}
                   {link.label}
                 </span>
                 <ArrowUpRight className="h-4 w-4" />
-              </a>
+              </motion.a>
             ))}
           </div>
         </div>

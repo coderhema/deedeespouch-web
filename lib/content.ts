@@ -22,6 +22,7 @@ export const navigation = [
   { label: 'Story', href: '#story' },
   { label: 'Why Deedees', href: '#why' },
   { label: 'Products', href: '#products' },
+  { label: 'Who It’s For', href: '#who-its-for' },
   { label: 'From Our Kitchen', href: '#from-our-kitchen' },
   { label: 'Order Now', href: '#order-now' }
 ];
@@ -95,12 +96,20 @@ export const instagramReels = [
   {
     title: 'Kitchen reel one',
     embedUrl: 'https://www.instagram.com/reel/DT4qwOGCRyP/embed/',
-    caption: 'Embedding ready for a reel or image drop-in.'
+    permalink: 'https://www.instagram.com/reel/DT4qwOGCRyP/',
+    caption: 'Fresh kitchen moments in a fully interactive reel frame.'
   },
   {
     title: 'Kitchen reel two',
     embedUrl: 'https://www.instagram.com/reel/DVKMV0hEnQL/embed/',
-    caption: 'Embedding ready for a reel or image drop-in.'
+    permalink: 'https://www.instagram.com/reel/DVKMV0hEnQL/',
+    caption: 'Designed for a playable Instagram-native experience.'
+  },
+  {
+    title: 'Kitchen reel three',
+    embedUrl: 'https://www.instagram.com/reel/DTU1FpKD0FQ/embed/',
+    permalink: 'https://www.instagram.com/reel/DTU1FpKD0FQ/',
+    caption: 'A third reel slot for polished, premium storytelling.'
   }
 ];
 
@@ -109,4 +118,35 @@ export const instagramPlaceholderCard = {
   caption: 'A future slot for an image, post, or iframe embed.'
 };
 
-export const brandEmail = 'eatablesfc@gmail.com';
+export const brandEmail = 'deedeesbespoke@gmail.com';
+
+
+export const audienceSections = [
+  {
+    title: 'Expectant Mothers & Women',
+    description: 'A nourishing, smooth pap experience for pregnancy, postpartum, and everyday care — easy to prepare, comforting to serve, and ideal for traditional Akamu/Ogi that feels refined and dependable.'
+  },
+  {
+    title: 'Busy Professionals & Families',
+    description: 'A practical pantry staple for hectic schedules: quick to make, beautifully smooth, and full of the authentic traditional taste your home table expects.'
+  }
+];
+
+export const enjoymentWays = [
+  {
+    title: 'Traditional Pap / Akamu',
+    description: 'Smooth, glop-free, and gently satisfying — the kind of bowl that feels both nourishing and beautifully familiar.'
+  },
+  {
+    title: 'Moi Moi base',
+    description: 'A convenient starting point for a soft, savory Moi Moi with a clean finish and a rich traditional profile.'
+  },
+  {
+    title: 'Agidi',
+    description: 'Elegant, silky, and easy to serve — ideal for a polished plate with stew or a light, comforting meal.'
+  },
+  {
+    title: 'Ekuru',
+    description: 'A classic taste made tidy and practical, with a premium texture that keeps preparation simple and the result appetizing.'
+  }
+];

@@ -1,94 +1,108 @@
 'use client';
 
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Instagram } from 'iconoir-react';
-import { instagramPlaceholderCard, instagramReels } from '@/lib/content';
+import { instagramReels } from '@/lib/content';
 
-const reveal = {
+const sectionVariants = {
+  hidden: { opacity: 0, y: 28, scale: 0.985 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const, staggerChildren: 0.08, delayChildren: 0.08 }
+  }
+};
+
+const itemVariants = {
   hidden: { opacity: 0, y: 16 },
   show: { opacity: 1, y: 0 }
 };
 
-const transition = { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const };
+const spring = { type: 'spring' as const, stiffness: 240, damping: 24, mass: 0.9 };
+
+function InstagramReelEmbed({ title, permalink, caption, tilt }: { title: string; permalink: string; caption: string; tilt: number }) {
+  return (
+    <motion.article
+      variants={itemVariants}
+      style={{ rotate: tilt }}
+      whileHover={{ y: -6, rotate: 0 }}
+      transition={spring}
+      className="rounded-[1.75rem] border border-violet-200 bg-[linear-gradient(180deg,#ffffff_0%,#f4ecff_100%)] p-4 shadow-[0_18px_50px_rgba(111,57,231,0.12)]"
+    >
+      <div className="rounded-[1.25rem] border border-violet-200 bg-white p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
+        <div className="flex items-center justify-between gap-3">
+          <span className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-violet-700">
+            <Instagram className="h-4 w-4" /> Reel
+          </span>
+          <a href={permalink} target="_blank" rel="noreferrer" className="text-xs font-medium text-violet-700/70 transition hover:text-violet-900">
+            View on Instagram
+          </a>
+        </div>
+
+        <div className="mt-4 aspect-[9/16] overflow-hidden rounded-[1.1rem] border border-violet-200 bg-[linear-gradient(180deg,#fbf8ff_0%,#ffffff_100%)]">
+          <blockquote
+            className="instagram-media h-full w-full"
+            data-instgrm-permalink={permalink}
+            data-instgrm-version="14"
+            data-instgrm-captioned
+            style={{ background: '#FFF', border: 0, margin: 0, minWidth: '100%', padding: 0, width: '100%' }}
+          >
+            <a href={permalink} target="_blank" rel="noreferrer">
+              {title}
+            </a>
+          </blockquote>
+        </div>
+
+        <p className="mt-4 text-sm leading-6 text-zinc-600">{caption}</p>
+      </div>
+    </motion.article>
+  );
+}
 
 export function InstagramSection() {
-  const cards = [
-    { kind: 'embed', ...instagramReels[0], tilt: '-2deg' },
-    { kind: 'embed', ...instagramReels[1], tilt: '2deg' },
-    { kind: 'placeholder', ...instagramPlaceholderCard, tilt: '-1deg' }
-  ] as const;
+  useEffect(() => {
+    const existing = document.querySelector('script[src="//www.instagram.com/embed.js"]') as HTMLScriptElement | null;
+    if (!existing) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = '//www.instagram.com/embed.js';
+      script.onload = () => {
+        (window as Window & { instgrm?: { Embeds?: { process?: () => void } } }).instgrm?.Embeds?.process?.();
+      };
+      document.body.appendChild(script);
+    } else {
+      (window as Window & { instgrm?: { Embeds?: { process?: () => void } } }).instgrm?.Embeds?.process?.();
+    }
+  }, []);
 
   return (
     <section id="from-our-kitchen" className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-6xl">
-        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: '-10% 0px' }} variants={reveal} transition={transition} className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-violet-700/75">From Our Kitchen</p>
-          <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.03em] text-ink sm:text-5xl">
-            Instagram moments from the kitchen.
-          </h2>
-          <p className="mt-5 text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8">
-            These cards are ready for future Instagram images or iframe embeds and are styled to feel like a premium
-            gallery, not a generic feed.
-          </p>
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: '-12% 0px' }} variants={sectionVariants} className="max-w-2xl">
+          <motion.p variants={itemVariants} className="text-xs font-semibold uppercase tracking-[0.32em] text-violet-700/75">
+            From Our Kitchen
+          </motion.p>
+          <motion.h2 variants={itemVariants} className="mt-4 text-4xl font-extrabold tracking-[-0.03em] text-ink sm:text-5xl">
+            A polished reel gallery that feels editorial, not crowded.
+          </motion.h2>
+          <motion.p variants={itemVariants} className="mt-5 text-base leading-8 text-zinc-600 sm:text-lg">
+            Three Instagram reels, framed in a premium layout with subtle tilt, clean spacing, and a 9:16 ratio that keeps the media feeling intentional.
+          </motion.p>
         </motion.div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {cards.map((card, index) => (
-            <motion.article
-              key={card.title}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: '-8% 0px' }}
-              variants={reveal}
-              transition={{ ...transition, delay: index * 0.06 }}
-              style={{ rotate: card.tilt }}
-              className="rounded-[1.75rem] border border-violet-200 bg-[linear-gradient(180deg,#ffffff_0%,#f4ecff_100%)] p-4 shadow-[0_18px_50px_rgba(111,57,231,0.12)] transition hover:-translate-y-1"
-            >
-              <div className="aspect-[4/5] overflow-hidden rounded-[1.25rem] border border-violet-200 bg-violet-50">
-                {'kind' in card && card.kind === 'embed' ? (
-                  <div className="flex h-full flex-col">
-                    <div className="flex items-center justify-between gap-3 px-4 pt-4">
-                      <span className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white/85 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-violet-700 backdrop-blur">
-                        <Instagram className="h-4 w-4" /> Reel
-                      </span>
-                      <span className="text-xs font-medium text-violet-700/70">Instagram embed</span>
-                    </div>
-                    <div className="relative mt-4 flex-1 px-4 pb-4">
-                      <iframe
-                        title={card.title}
-                        src={card.embedUrl}
-                        className="h-full w-full rounded-[1.1rem] border border-violet-200 bg-white"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <div className="flex h-full flex-col justify-between p-5 text-violet-900">
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] backdrop-blur">
-                        <Instagram className="h-4 w-4" /> Instagram
-                      </span>
-                      <span className="text-xs font-medium text-violet-700/70">Placeholder</span>
-                    </div>
-
-                    <div className="rounded-[1.5rem] border border-dashed border-violet-300/80 bg-white/60 p-4 text-center backdrop-blur-sm">
-                      <p className="text-sm font-semibold uppercase tracking-[0.28em] text-violet-700/75">Drop in content here</p>
-                      <p className="mt-3 text-sm leading-6 text-zinc-600">{instagramPlaceholderCard.caption}</p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-2xl font-extrabold tracking-[-0.03em] text-ink">{instagramPlaceholderCard.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-zinc-600">
-                        Designed to accept an image or an iframe embed later.
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </motion.article>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-10% 0px' }}
+          variants={sectionVariants}
+          className="mt-12 grid gap-5 md:grid-cols-3"
+        >
+          {instagramReels.map((reel, index) => (
+            <InstagramReelEmbed key={reel.title} {...reel} tilt={index === 0 ? -1 : index === 1 ? 1 : -0.5} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

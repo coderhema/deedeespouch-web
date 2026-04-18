@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight, Menu, Xmark } from 'iconoir-react';
 import { logoImage, navigation, etsyLink } from '@/lib/content';
 
@@ -49,24 +50,30 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
+          <motion.a
             href={etsyLink}
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-2 rounded-full bg-violet-800 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-violet-900 lg:inline-flex"
+            whileHover={{ y: -3, scale: 1.01 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: 'spring', stiffness: 240, damping: 24, mass: 0.9 }}
+            className="hidden items-center gap-2 rounded-full bg-violet-800 px-4 py-2 text-sm font-medium text-white lg:inline-flex"
           >
             Order Now <ArrowRight className="h-4 w-4" />
-          </a>
-          <button
+          </motion.a>
+          <motion.button
             type="button"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
             onClick={() => setOpen((value) => !value)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-violet-100 bg-white text-violet-900 shadow-sm transition hover:bg-violet-50 lg:hidden"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 24, mass: 0.85 }}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-violet-100 bg-white text-violet-900 shadow-sm lg:hidden"
           >
             {open ? <Xmark className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          </motion.button>
         </div>
       </div>
 

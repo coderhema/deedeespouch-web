@@ -10,6 +10,7 @@ const reveal = {
 };
 
 const transition = { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const };
+const spring = { type: 'spring' as const, stiffness: 240, damping: 24, mass: 0.9 };
 
 export function MenuSection() {
   return (
@@ -35,7 +36,8 @@ export function MenuSection() {
               viewport={{ once: true, margin: '-10% 0px' }}
               variants={reveal}
               transition={{ ...transition, delay: index * 0.07 }}
-              className="group rounded-[1.75rem] border border-violet-100 bg-white p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_20px_70px_rgba(111,57,231,0.08)] transition hover:-translate-y-1"
+              whileHover={{ y: -5 }}
+              className="group rounded-[1.75rem] border border-violet-100 bg-white p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_20px_70px_rgba(111,57,231,0.08)]"
             >
               <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex items-start gap-4">
@@ -49,14 +51,17 @@ export function MenuSection() {
                   </div>
                 </div>
 
-                <a
+                <motion.a
                   href={etsyLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-fit items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-5 py-3 text-sm font-semibold text-violet-900 transition group-hover:bg-violet-100"
+                  whileHover={{ y: -3, scale: 1.01 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={spring}
+                  className="inline-flex w-fit items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-5 py-3 text-sm font-semibold text-violet-900"
                 >
                   Get Yours Today <ArrowRight className="h-4 w-4" />
-                </a>
+                </motion.a>
               </div>
 
               <div className="mt-6 flex flex-wrap gap-2">
