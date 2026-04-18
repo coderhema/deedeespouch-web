@@ -1,11 +1,11 @@
 export const brand = {
   name: 'Deedees Cooking Pouch',
   handle: '@deedeespouch',
-  tagline: 'Authentic Nigerian flavors, delivered to your door.',
+  tagline: 'One pouch. Many ways to enjoy tradition.',
   description:
-    'Traditional Nigerian foods in premium pouches for fast, tidy cooking and reliable delivery to Australia.',
+    'A premium, all-in-one Nigerian food pouch made for smooth pap, Moi Moi, Agidi, Ekuru, and everyday family cooking.',
   location: 'Australia delivery',
-  promise: 'Cook smart. Eat better.'
+  promise: 'One versatile pouch for everything'
 };
 
 export const logoImage = {
@@ -20,27 +20,26 @@ export const featuredImage = {
 
 export const navigation = [
   { label: 'Story', href: '#story' },
-  { label: 'Why Deedees', href: '#why' },
-  { label: 'Products', href: '#products' },
+  { label: 'One Pouch', href: '#one-pouch' },
   { label: 'Who It’s For', href: '#who-its-for' },
   { label: 'From Our Kitchen', href: '#from-our-kitchen' },
   { label: 'Order Now', href: '#order-now' }
 ];
 
 export const storyBullets = [
-  'Family recipe roots and Nigerian heritage in every pouch',
-  'Convenient heat-and-eat format made for busy homes',
-  'Premium quality with a clean, elegant presentation'
+  'One pouch that can flex across pap, Moi Moi, Agidi, Ekuru, and more',
+  'Premium convenience for homes that want tradition without the extra steps',
+  'A clean, elevated format that keeps the food front and center'
 ];
 
 export const whyBenefits = [
   {
-    title: 'Authentic recipe',
-    description: 'Built around familiar Nigerian flavors and the comforting taste people grew up with.'
+    title: 'Traditional taste, simplified',
+    description: 'Keeps the familiar flavor and texture people love while removing the clutter from the cooking process.'
   },
   {
-    title: 'Heat-and-eat convenience',
-    description: 'A pouch format that keeps prep simple, tidy, and quick without losing the tradition.'
+    title: 'All-in-one convenience',
+    description: 'A single pouch format that can support breakfast, family meals, and classic dishes without switching products.'
   },
   {
     title: 'Australia-wide delivery',
@@ -48,34 +47,33 @@ export const whyBenefits = [
   }
 ];
 
-export interface ProductCard {
-  number: string;
-  name: string;
-  description: string;
-  details: string[];
-}
+export const onePouchHighlights = [
+  {
+    title: 'Pap / Akamu / Ogi',
+    description: 'Smooth, glop-free, and comforting — a reliable everyday staple with a polished finish.'
+  },
+  {
+    title: 'Moi Moi',
+    description: 'A rich base for a soft, savoury Moi Moi with the right traditional depth.'
+  },
+  {
+    title: 'Agidi',
+    description: 'Silky and elegant for a neat, satisfying plate that feels both traditional and refined.'
+  },
+  {
+    title: 'Ekuru',
+    description: 'A clean, appetizing result that keeps preparation easy and the serving presentation premium.'
+  }
+];
 
-export const products: ProductCard[] = [
+export const audienceSections = [
   {
-    number: '01',
-    name: 'Moi Moi Pouch',
-    description:
-      'Soft, savory, and satisfying. A traditional classic made for easy preparation and a clean, beautiful finish.',
-    details: ['Rich flavor', 'Family favorite', 'Perfect for gatherings']
+    title: 'Expectant Mothers & Women',
+    description: 'A nourishing, smooth pap experience for pregnancy and postpartum care — easy to prepare, comforting to serve, and ideal for traditional Akamu/Ogi that feels refined and dependable.'
   },
   {
-    number: '02',
-    name: 'Agidi Pouch',
-    description:
-      'Smooth and light, with the calm texture and dependable structure that works well for everyday meals and events.',
-    details: ['Simple to serve', 'Great with stews', 'Premium presentation']
-  },
-  {
-    number: '03',
-    name: 'Ekuru Pouch',
-    description:
-      'A traditional favorite with a clean, modern pouch format that keeps the process easy from kitchen to table.',
-    details: ['Traditional taste', 'Less mess', 'Reliable convenience']
+    title: 'Busy Professionals & Families',
+    description: 'A practical pantry staple for hectic schedules: quick to make, beautifully smooth, and full of the authentic traditional taste your home table expects.'
   }
 ];
 
@@ -113,40 +111,4 @@ export const instagramReels = [
   }
 ];
 
-export const instagramPlaceholderCard = {
-  title: 'Family table moments',
-  caption: 'A future slot for an image, post, or iframe embed.'
-};
-
 export const brandEmail = 'deedeesbespoke@gmail.com';
-
-
-export const audienceSections = [
-  {
-    title: 'Expectant Mothers & Women',
-    description: 'A nourishing, smooth pap experience for pregnancy, postpartum, and everyday care — easy to prepare, comforting to serve, and ideal for traditional Akamu/Ogi that feels refined and dependable.'
-  },
-  {
-    title: 'Busy Professionals & Families',
-    description: 'A practical pantry staple for hectic schedules: quick to make, beautifully smooth, and full of the authentic traditional taste your home table expects.'
-  }
-];
-
-export const enjoymentWays = [
-  {
-    title: 'Traditional Pap / Akamu',
-    description: 'Smooth, glop-free, and gently satisfying — the kind of bowl that feels both nourishing and beautifully familiar.'
-  },
-  {
-    title: 'Moi Moi base',
-    description: 'A convenient starting point for a soft, savory Moi Moi with a clean finish and a rich traditional profile.'
-  },
-  {
-    title: 'Agidi',
-    description: 'Elegant, silky, and easy to serve — ideal for a polished plate with stew or a light, comforting meal.'
-  },
-  {
-    title: 'Ekuru',
-    description: 'A classic taste made tidy and practical, with a premium texture that keeps preparation simple and the result appetizing.'
-  }
-];

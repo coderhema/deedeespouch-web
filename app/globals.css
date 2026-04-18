@@ -17,11 +17,12 @@ html {
 
 body {
   margin: 0;
-  color: #120b1d;
-  font-family: var(--font-sans), system-ui, sans-serif;
+  color: #1b1224;
+  font-family: var(--font-body), Georgia, serif;
   background:
-    radial-gradient(circle at top, rgba(107, 33, 168, 0.12), transparent 30%),
-    linear-gradient(180deg, #fafafa 0%, #fffdfd 50%, #fafafa 100%);
+    radial-gradient(circle at top, rgba(107, 33, 168, 0.12), transparent 28%),
+    radial-gradient(circle at 85% 0%, rgba(214, 188, 255, 0.24), transparent 28%),
+    linear-gradient(180deg, #fcfbff 0%, #fffdfd 45%, #faf8ff 100%);
   min-height: 100vh;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
@@ -34,9 +35,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-weight: 800;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 700;
   letter-spacing: -0.03em;
+}
+
+p,
+a,
+li,
+button {
+  font-family: var(--font-body), Georgia, serif;
 }
 
 img {
