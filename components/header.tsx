@@ -24,13 +24,15 @@ export function Header() {
 
   return (
     <header className="sticky top-4 z-50 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-white/70 bg-white/88 px-3 py-3 shadow-[0_14px_40px_rgba(107,33,168,0.08)] backdrop-blur-xl sm:px-4">
-        <a href="#hero" className="flex min-w-0 items-center rounded-full px-2 py-1 transition hover:bg-violet-50">
-          <img
-            src="/Deedee%27s%20Bespoke%20horizontal.png"
-            alt="Deedee's Bespokes horizontal logo"
-            className="h-10 w-[9.5rem] object-contain object-left sm:w-[12.5rem] lg:w-[14rem]"
-          />
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-zinc-200 bg-white px-3 py-3 shadow-[0_18px_50px_rgba(17,24,39,0.08)] sm:px-4">
+        <a href="#hero" className="flex min-w-0 items-center rounded-full px-2 py-1 transition hover:bg-zinc-50">
+          <span className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-2 py-1 shadow-sm">
+            <img
+              src="/Deedee%27s%20Bespoke%20horizontal.png"
+              alt="Deedee's Bespokes horizontal logo"
+              className="h-10 w-[9.5rem] object-contain object-left sm:w-[12.5rem] lg:w-[14rem]"
+            />
+          </span>
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
@@ -38,7 +40,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-zinc-600 transition hover:bg-violet-50 hover:text-violet-800"
+              className="rounded-full px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100 hover:text-zinc-950"
             >
               {item.label}
             </a>
@@ -66,7 +68,7 @@ export function Header() {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             transition={{ type: 'spring', stiffness: 260, damping: 24, mass: 0.85 }}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-violet-100 bg-white text-violet-900 shadow-sm lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-200 bg-white text-violet-900 shadow-sm lg:hidden"
           >
             {open ? <Xmark className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </motion.button>
@@ -86,14 +88,14 @@ export function Header() {
         />
 
         <div
-          className={`fixed left-4 right-4 top-20 z-50 overflow-hidden rounded-[1.75rem] border border-violet-100 bg-white shadow-[0_24px_70px_rgba(107,33,168,0.16)] transition-all duration-300 ease-out ${open ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}
+          className={`fixed left-4 right-4 top-20 z-50 overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white shadow-[0_24px_70px_rgba(17,24,39,0.12)] transition-all duration-300 ease-out ${open ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}
         >
-          <div className="flex items-center justify-between border-b border-violet-100 px-5 py-4">
-            <p className="text-sm font-semibold text-violet-900">Menu</p>
+          <div className="flex items-center justify-between border-b border-zinc-200 px-5 py-4">
+            <p className="text-sm font-semibold text-zinc-900">Menu</p>
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-violet-100 bg-violet-50 text-violet-900"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 text-zinc-900"
             >
               <Xmark className="h-5 w-5" />
             </button>
@@ -104,7 +106,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-2xl px-4 py-4 text-base font-medium text-zinc-700 transition hover:bg-violet-50 hover:text-violet-900"
+                className="rounded-2xl px-4 py-4 text-base font-medium text-zinc-800 transition hover:bg-zinc-100 hover:text-zinc-950"
               >
                 {item.label}
               </a>
