@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Menu, Xmark } from 'iconoir-react';
-import { logoImage, navigation, etsyLink } from '@/lib/content';
+import { headerLogoImage, navigation, etsyLink } from '@/lib/content';
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -24,16 +24,10 @@ export function Header() {
 
   return (
     <header className="sticky top-4 z-50 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/70 bg-white/80 px-3 py-3 shadow-[0_20px_70px_rgba(107,33,168,0.08)] backdrop-blur-xl">
-        <a href="#hero" className="flex items-center gap-3 rounded-full px-2 py-1 transition hover:bg-violet-50">
-          <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-violet-100 bg-white">
-            <img src={logoImage.src} alt={logoImage.alt} className="h-full w-full object-cover" />
-          </span>
-          <span className="hidden sm:block">
-            <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-violet-800/75">
-              Deedees Cooking Pouch
-            </span>
-            <span className="block text-sm text-zinc-500">Authentic Nigerian flavors, delivered to your door.</span>
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-white/70 bg-white/80 px-3 py-3 shadow-[0_20px_70px_rgba(107,33,168,0.08)] backdrop-blur-xl sm:px-4">
+        <a href="#hero" className="flex min-w-0 items-center rounded-full px-2 py-1 transition hover:bg-violet-50">
+          <span className="flex h-10 w-[9.5rem] items-center overflow-hidden sm:w-[11.5rem] lg:w-[13rem]">
+            <img src={headerLogoImage.src} alt={headerLogoImage.alt} className="h-full w-full object-contain object-left" />
           </span>
         </a>
 

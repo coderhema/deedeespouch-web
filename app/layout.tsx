@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Lora } from 'next/font/google';
+import { Abril_Fatface, Plus_Jakarta_Sans } from 'next/font/google';
 import type { ReactNode } from 'react';
-import { featuredImage, logoImage } from '@/lib/content';
+import { featuredImage, faviconImage } from '@/lib/content';
 import './globals.css';
 
-const playfairDisplay = Playfair_Display({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
-const lora = Lora({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
+const abrilFatface = Abril_Fatface({ subsets: ['latin'], variable: '--font-display', weight: '400', display: 'swap' });
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 
 export const metadata: Metadata = {
   title: {
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     images: [featuredImage.src]
   },
   icons: {
-    icon: [{ url: logoImage.src }]
+    icon: [{ url: faviconImage.src }]
   }
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${playfairDisplay.variable} ${lora.variable} antialiased`}>
+      <body className={`${abrilFatface.variable} ${plusJakartaSans.variable} antialiased`}>
         {children}
       </body>
     </html>
