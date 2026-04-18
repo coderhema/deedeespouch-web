@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'iconoir-react';
-import { brand, etsyLink, featuredImage, logoImage } from '@/lib/content';
+import { brand, etsyLink, featuredImage } from '@/lib/content';
 
 const container = {
   hidden: { opacity: 0 },
@@ -100,8 +100,7 @@ export function Hero() {
                       DeedeesPouch
                     </span>
                     <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-zinc-700 backdrop-blur">
-                      <img src={logoImage.src} alt={logoImage.alt} className="h-4 w-20 object-contain object-left" />
-                      <span className="sr-only">{brand.location}</span>
+                      <span className="font-semibold text-violet-900">Deedees Cooking Pouch</span>
                     </span>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">

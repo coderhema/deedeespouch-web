@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Instagram, Mail } from 'iconoir-react';
-import { brand, brandEmail, footerLinks, logoImage } from '@/lib/content';
+import { brand, brandEmail, footerLinks } from '@/lib/content';
 
 const spring = { type: 'spring' as const, stiffness: 240, damping: 24, mass: 0.9 };
 
@@ -12,14 +12,9 @@ export function Footer() {
       <div className="mx-auto max-w-6xl rounded-[2rem] border border-violet-100 bg-[linear-gradient(180deg,#ffffff_0%,#faf5ff_100%)] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_20px_70px_rgba(111,57,231,0.08)] sm:p-8">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-[11rem] items-center overflow-hidden rounded-full border border-violet-100 bg-white shadow-sm sm:w-[13rem]">
-                <img src={logoImage.src} alt={logoImage.alt} className="h-full w-full object-contain object-left" />
-              </span>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-violet-700/75">Deedees Cooking Pouch</p>
-                <p className="mt-1 text-sm text-zinc-500">{brand.promise}</p>
-              </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-violet-700/75">Deedees Cooking Pouch</p>
+              <p className="mt-1 text-sm text-zinc-500">{brand.promise}</p>
             </div>
 
             <h2 className="mt-6 text-3xl font-extrabold tracking-[-0.03em] text-ink sm:text-4xl">

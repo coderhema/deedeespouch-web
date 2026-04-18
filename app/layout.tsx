@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Dancing_Script, Plus_Jakarta_Sans } from 'next/font/google';
 import type { ReactNode } from 'react';
-import { featuredImage, faviconImage } from '@/lib/content';
+import { featuredImage } from '@/lib/content';
 import './globals.css';
 
 const dancingScript = Dancing_Script({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
@@ -27,9 +27,6 @@ export const metadata: Metadata = {
     description:
       'One versatile Nigerian food pouch for smooth pap, Moi Moi, Agidi, Ekuru, and everyday family cooking with Australia-wide delivery.',
     images: [featuredImage.src]
-  },
-  icons: {
-    icon: [{ url: faviconImage.src }]
   }
 };
 

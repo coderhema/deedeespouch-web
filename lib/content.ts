@@ -8,18 +8,6 @@ export const brand = {
   promise: 'One versatile pouch for everything'
 };
 
-export const headerLogoImage = {
-  src: '/header-logo.jpg',
-  alt: "Deedee's Bespokes horizontal logo"
-};
-
-export const faviconImage = {
-  src: '/favicon.svg',
-  alt: "Deedee's Bespokes icon"
-};
-
-export const logoImage = headerLogoImage;
-
 export const featuredImage = {
   src: 'https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/534372025_17843253213558634_1012827675210431039_n.jpg?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=450_ujDqHrAQ7kNvwE8g4sd&_nc_oc=AdrM0wZrCc19WtIhLWKcLRw-MJQKjs6iWC96uTYgInRw9vKf68pASb9FBVIud73WTfo&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_gid=P-h3y_EicVXwG5xncz_IKA&_nc_ss=7a289&oh=00_Af05IUVQwHVUWCk5mdm6lEfdmwAE8NkAuTJ59Kpf7FwTGw&oe=69E7E8F0',
   alt: 'Deedees Cooking Pouch featured Instagram post'
