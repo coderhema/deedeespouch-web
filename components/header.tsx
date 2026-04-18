@@ -23,7 +23,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-4 z-50 px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-[60] px-4 pt-4 sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-zinc-200 bg-white px-3 py-3 shadow-[0_18px_50px_rgba(17,24,39,0.08)] sm:px-4">
         <a href="#hero" className="flex min-w-0 items-center rounded-full px-2 py-1 transition hover:bg-zinc-50">
           <span className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-2 py-1 shadow-sm">

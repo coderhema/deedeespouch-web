@@ -82,12 +82,8 @@ export function InstagramSection() {
             From Our Kitchen
           </motion.p>
           <motion.h2 variants={itemVariants} className="mt-4 text-4xl font-bold tracking-[-0.04em] text-ink sm:text-5xl">
-            A quiet, editorial reel gallery with room to breathe.
+            What people are saying now
           </motion.h2>
-          <motion.p variants={itemVariants} className="mt-5 text-base leading-8 text-zinc-600 sm:text-lg">
-            Three Instagram reels, framed in a premium layout with subtle presence, organic spacing, and a 9:16 ratio
-            that keeps the media feeling intentional.
-          </motion.p>
         </motion.div>
 
         <motion.div
