@@ -79,7 +79,7 @@ export function Header() {
 
       <div
         id="mobile-menu"
-        className={`lg:hidden ${open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`}
+        className={`lg:hidden ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}
         aria-hidden={!open}
       >
         <button
@@ -90,9 +90,12 @@ export function Header() {
         />
 
         <div
-          className={`fixed left-4 right-4 top-20 z-50 overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white shadow-[0_24px_70px_rgba(17,24,39,0.12)] transition-all duration-300 ease-out ${open ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}
+          className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-all duration-300 ease-out sm:p-6 ${open ? 'opacity-100' : 'opacity-0'}`}
         >
-          <div className="flex items-center justify-between border-b border-zinc-200 px-5 py-4">
+          <div
+            className={`w-full max-w-md overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white shadow-[0_24px_70px_rgba(17,24,39,0.12)] transition-transform duration-300 ease-out ${open ? 'translate-y-0 scale-100' : 'translate-y-4 scale-95'}`}
+          >
+            <div className="flex items-center justify-between border-b border-zinc-200 px-5 py-4">
             <p className="text-sm font-semibold text-zinc-900">Menu</p>
             <button
               type="button"
