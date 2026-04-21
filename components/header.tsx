@@ -5,6 +5,12 @@ import { motion } from 'framer-motion';
 import { Menu, ShoppingBag, Xmark } from 'iconoir-react';
 import { navigation, etsyLink } from '@/lib/content';
 
+const navLinkClass = 'rounded-full px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100 hover:text-zinc-950';
+const mobileNavLinkClass = 'rounded-2xl px-4 py-4 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100 hover:text-zinc-950';
+const ctaClass = 'inline-flex items-center justify-center gap-2 rounded-full bg-violet-800 px-4 py-3.5 text-sm font-medium text-white transition hover:bg-violet-700';
+const iconClass = 'h-4 w-4 shrink-0';
+const menuIconClass = 'h-5 w-5 shrink-0';
+
 export function Header() {
   const [open, setOpen] = useState(false);
 
@@ -37,11 +43,7 @@ export function Header() {
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
           {navigation.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-100 hover:text-zinc-950"
-            >
+            <a key={item.href} href={item.href} className={navLinkClass}>
               {item.label}
             </a>
           ))}
@@ -55,9 +57,9 @@ export function Header() {
             whileHover={{ y: -3, scale: 1.01 }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 240, damping: 24, mass: 0.9 }}
-            className="hidden items-center gap-2 rounded-full bg-violet-800 px-4 py-2 text-sm font-medium text-white lg:inline-flex"
+            className={`${ctaClass} hidden lg:inline-flex`}
           >
-            Order Now <ShoppingBag className="h-4 w-4" />
+            Order Now <ShoppingBag className={iconClass} />
           </motion.a>
           <motion.button
             type="button"
@@ -70,7 +72,7 @@ export function Header() {
             transition={{ type: 'spring', stiffness: 260, damping: 24, mass: 0.85 }}
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-200 bg-white text-violet-900 shadow-sm lg:hidden"
           >
-            {open ? <Xmark className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {open ? <Xmark className={menuIconClass} /> : <Menu className={menuIconClass} />}
           </motion.button>
         </div>
       </div>
@@ -97,27 +99,17 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 text-zinc-900"
             >
-              <Xmark className="h-5 w-5" />
+              <Xmark className={menuIconClass} />
             </button>
           </div>
           <nav aria-label="Mobile primary" className="grid gap-1 p-3">
             {navigation.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-2xl px-4 py-4 text-base font-medium text-zinc-800 transition hover:bg-zinc-100 hover:text-zinc-950"
-              >
+              <a key={item.href} href={item.href} onClick={() => setOpen(false)} className={mobileNavLinkClass}>
                 {item.label}
               </a>
             ))}
-            <a
-              href={etsyLink}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-violet-800 px-4 py-3.5 text-sm font-semibold text-white"
-            >
-              Order Now <ShoppingBag className="h-4 w-4" />
+            <a href={etsyLink} target="_blank" rel="noreferrer" className={`${ctaClass} mt-2 w-full`}>
+              Order Now <ShoppingBag className={iconClass} />
             </a>
           </nav>
         </div>
